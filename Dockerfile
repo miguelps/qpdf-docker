@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 LABEL maintainer="ToshY <github.com/ToshY>"
 
-ARG QPDF_VERSION
+ARG QPDF_VERSION=11.9.2
 
 RUN apt-get update && apt-get install -y \
     wget \

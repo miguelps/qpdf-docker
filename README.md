@@ -63,6 +63,17 @@ docker run -it --rm -v $(pwd)/files:/pdf --entrypoint /bin/sh t0shy/qpdf-docker:
 
 > Note: Entrypoint is changed to `/bin/sh` and supplying command with `-c`, as wildcard character `*` is interpreted by shell.
 
-## ❕ License
+# Miguel's Annotations
+
+```
+docker run --platform linux/amd64 -it --rm t0shy/qpdf-docker:latest --help=all
+docker run --platform linux/amd64 -it --rm t0shy/qpdf-docker:latest --help=--list-attachments
+docker run --platform linux/amd64 -it --rm -v ~/dset:/pdf --entrypoint /bin/sh t0shy/qpdf-docker:latest -c 'qpdf --help=all'
+docker run --platform linux/amd64 -it --rm -v ~/dset:/pdf --entrypoint /bin/sh t0shy/qpdf-docker:latest -c 'qpdf CNH-e.pdf --list-attachments'
+docker run --platform linux/amd64 -it --rm -v ~/dset:/pdf --entrypoint /bin/sh t0shy/qpdf-docker:latest -c 'qpdf CNH-e.pdf --check'
+docker run --platform linux/amd64 -it --rm -v ~/dset:/pdf --entrypoint /bin/sh t0shy/qpdf-docker:latest -c 'qpdf CNH-e.pdf --raw-stream-data - '
+docker run --platform linux/amd64 -it --rm -v ~/dset:/pdf --entrypoint /bin/sh t0shy/qpdf-docker:latest -c 'qpdf CNH-e.pdf --show-object=trailer'
+docker run --platform linux/amd64 -it --rm -v ~/dset:/pdf --entrypoint /bin/sh t0shy/qpdf-docker:latest -c 'qpdf CNH-e.pdf --show-xref'
+```
 
 This repository comes with a [MIT license](./LICENSE).
